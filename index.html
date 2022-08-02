@@ -15,7 +15,7 @@
   </head>
   <body>
     <main>
-      <section class="section-left">
+      <section class="left-section">
         <h1 class="logo-name">
           <img
             class="logo-image"
@@ -24,52 +24,57 @@
           />
           Odin
         </h1>
+        <p class="credit">
+          Photo by <a class="credit-link link" href="https://unsplash.com/@sebinthomas">Sebin Thomas</a> on Unsplash</a>
+        </p>
       </section>
-      <section class="section-right">
+      <section class="right-section">
         <div class="container">
-          <header class="section-header">
+          <header>
             <p>
               This is not a real online service! You know you need something
               like this in your life to help you realize your deepest dreams.
             </p>
             <p>Sign up now to get started.</p>
-            <p>You know you want to.</p>
+            <p>You <em>know</em> you want to.</p>
           </header>
           <form id="signup-form" class="form" action="#">
-            <div class="inputs-container">
-              <h1 class="form-heading">Let's do this!</h1>
-              <div class="inputs-left">
-                <div class="form-control">
-                  <label for="first-name">First name</label>
-                  <input type="text" id="first-name" name="first-name" />
-                </div>
-                <div class="form-control">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" />
-                </div>
-                <div class="form-control">
-                  <label for="password-1">Password</label>
-                  <input type="password" id="password-1" name="password-1" />
-                </div>
+            <h1 class="form-heading">Let's do this!</h1>
+            <div class="inputs-left">
+              <div class="form-control">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" name="first-name" required/>
               </div>
-              <div class="inputs-right">
-                <div class="form-control">
-                  <label for="last-name">Last name</label>
-                  <input type="text" id="last-name" name="last-name" />
-                </div>
-                <div class="form-control">
-                  <label for="telephone">Phone number</label>
-                  <input type="tel" id="telephone" name="telephone" />
-                </div>
-                <div class="form-control">
-                  <label for="password-2">Confirm password</label>
-                  <input type="password" id="password-2" name="password-1" />
-                </div>
+              <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required/>
+              </div>
+              <div class="form-control">
+                <label for="password-1">Password</label>
+                <input type="password" id="password-1" name="password-1" required/>
               </div>
             </div>
-            <button type="submit">Create Account</button>
+            <div class="inputs-right">
+              <div class="form-control">
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" name="last-name" required/>
+              </div>
+              <div class="form-control">
+                <label for="telephone">Phone number</label>
+                <input type="tel" id="telephone" name="telephone" required/>
+              </div>
+              <div class="form-control">
+                <label for="password-2">Confirm password</label>
+                <input type="password" id="password-2" name="password-1" required/>
+              </div>
+            </div>
           </form>
-          <p>Already have an account? <a href="#">Log in</a></p>
+          <div class="bottom">
+            <button class="btn" type="submit" form="signup-form">Create Account</button>
+            <p class="login">
+              Already have an account? <a href="#" class="login-link link">Log in</a>
+            </p>
+          </div>
         </div>
       </section>
     </main>

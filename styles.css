@@ -2,9 +2,9 @@ html {
   font-family: "Titillium Web", sans-serif;
   font-size: 62.5%;
   box-sizing: border-box;
-  --green1: rgb(161, 180, 39);
-  --green2: rgb(127 145 60);
-  --green1-transp: rgba(161, 180, 39, 0.6);
+  --green1: #567901;
+  --green2: #e6ebaa;
+  --green1-transp: rgb(86, 121, 1, 0.7);
 }
 
 *,
@@ -25,6 +25,18 @@ main {
   height: 100%;
 }
 
+.link:link,
+.link:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /*****************/
 /* LOGO */
 /*****************/
@@ -41,42 +53,64 @@ main {
 /*****************/
 /* SECTION LEFT */
 /*****************/
-.section-left {
+.left-section {
   width: 50%;
   background-color: var(--green1);
   background-image: url(imgs/background.jpg);
   background-size: cover;
   background-position: bottom;
+  overflow: hidden;
+
+  position: relative;
 }
 
 .logo-name {
+  width: 100%;
+  height: 100px;
   background-color: var(--green1-transp);
   color: white;
-  font-size: 7.4rem;
+  font-size: 6.4rem;
   padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 
-  position: relative;
-  top: 22%;
+  position: absolute;
+
+  top: 25%;
 }
 
 .logo-image {
-  width: 80px;
+  width: 60px;
+}
+
+.credit {
+  width: 100%;
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+
+  position: absolute;
+  bottom: 5px;
+}
+
+.credit-link {
+  color: inherit;
 }
 
 /*****************/
 /* SECTION RIGHT */
 /*****************/
-.section-right {
+.right-section {
   width: 50%;
-  background-color: #ddd;
+  background-color: var(--green2);
 
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -84,20 +118,25 @@ main {
   width: 100%;
 }
 
-.section-header {
+.right-section header {
+  padding: 6rem 2.8rem;
+}
+
+.right-section header > p {
+  color: black;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.right-section header > p:nth-child(2) {
+  margin-bottom: 1.8rem;
 }
 
 .form {
-}
-
-.form-heading {
-  font-weight: 600;
-  grid-column: 1/-1;
-}
-
-.inputs-container {
   background-color: white;
-  padding: 1.4rem 2.8rem;
+  padding: 2rem 2.8rem 3rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 
   display: grid;
   grid-template-columns: auto 1fr;
@@ -105,19 +144,61 @@ main {
   row-gap: 1.4rem;
 }
 
+.form-heading {
+  font-size: 2.4rem;
+  font-weight: 600;
+  grid-column: 1/-1;
+}
+
 .inputs-left,
 .inputs-right {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 2rem;
 }
 
 .form label {
+  font-size: 1.4rem;
   text-transform: uppercase;
+  font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 2px;
 }
 
 .form input {
+  border: 1px solid #ccc;
   display: block;
+  padding: 0.5rem 1rem;
+  min-width: 25rem;
+}
+
+.bottom {
+  padding: 3.5rem 2.8rem;
+}
+
+.btn {
+  font-size: 1.8rem;
+  font-weight: 600;
+  background-color: var(--green1);
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  padding: 1rem 3.5rem;
+  border-radius: 8px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.login {
+  font-size: 1.6rem;
+}
+
+.login-link {
+  font-weight: 600;
 }
