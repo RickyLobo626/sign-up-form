@@ -1,3 +1,39 @@
 html {
   font-family: "Titillium Web", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+}
+
+main {
+  display: flex;
+}
+
+/*****************/
+/* LOGO */
+/*****************/
+@font-face {
+  font-family: "Norse Bold";
+  src: url(Norse-Bold.otf);
+}
+
+.logo-name {
+  font-family: "Norse Bold";
+  font-size: 3rem;
+}
+
+/*****************/
+/* SECTION LEFT */
+/*****************/
+.section-left {
+  background-color: rgb(97, 148, 20);
+  background-image: url(imgs/background.jpg);
+  background-size: cover;
+}
+
+/*****************/
+/* SECTION RIGHT */
+/*****************/
+.section-right {
 }
