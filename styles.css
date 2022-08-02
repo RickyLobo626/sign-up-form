@@ -55,12 +55,13 @@ main {
   font-size: 7.4rem;
   padding: 1rem;
 
-  position: relative;
-  top: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+  position: relative;
+  top: 22%;
 }
 
 .logo-image {
@@ -72,4 +73,51 @@ main {
 /*****************/
 .section-right {
   width: 50%;
+  background-color: #ddd;
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.container {
+  width: 100%;
+}
+
+.section-header {
+}
+
+.form {
+}
+
+.form-heading {
+  font-weight: 600;
+  grid-column: 1/-1;
+}
+
+.inputs-container {
+  background-color: white;
+  padding: 1.4rem 2.8rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 4rem;
+  row-gap: 1.4rem;
+}
+
+.inputs-left,
+.inputs-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.form input {
+  display: block;
 }
