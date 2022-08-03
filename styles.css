@@ -27,8 +27,8 @@ html {
 
 main {
   display: flex;
-  height: 100vh;
-  min-width: 30rem;
+  min-height: 100vh;
+  min-width: 25rem;
 }
 
 .link:link,
@@ -43,13 +43,9 @@ main {
   text-underline-offset: 2px;
 }
 
-.section {
-  width: 50%;
-  flex-shrink: 0;
-}
-
 .inputs {
-  width: 100%;
+  min-width: 20rem;
+  max-width: 35rem;
 
   display: flex;
   flex-direction: column;
@@ -66,31 +62,32 @@ main {
   background-position: bottom;
   overflow: hidden;
 
+  flex-basis: 40%;
+
   position: relative;
 }
 
-.logo-name {
-  font-family: "Norse Bold";
-  height: 20rem;
-  width: 100%;
+.logo-container {
   background-color: var(--green1-transp);
-  color: white;
-  font-size: 12rem;
   padding: 1.2rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  position: relative;
+  top: 19%;
+}
 
-  position: absolute;
-  top: 17%;
+.logo-name {
+  color: white;
+  font-family: "Norse Bold";
+  font-size: 12rem;
 }
 
 .logo-image {
-  width: auto;
-  height: 100%;
+  width: 15rem;
+  height: 15rem;
 }
 
 .credit {
@@ -113,7 +110,7 @@ main {
 /*****************/
 .section--right {
   background-color: var(--green2);
-  flex: 1;
+  flex-basis: 60%;
 
   display: flex;
   flex-direction: column;
@@ -143,7 +140,8 @@ main {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 26rem 26rem;
+
   column-gap: 4rem;
   row-gap: 1.4rem;
 }
@@ -166,7 +164,7 @@ main {
 }
 
 .form input {
-  min-width: 20rem;
+  width: 100%;
   font-size: 1.6rem;
   border: 2px solid #ddd;
   border-radius: 5px;
@@ -254,36 +252,21 @@ main {
 
 /* max-width: 1200px */
 @media (max-width: 75em) {
-  main {
-    flex-direction: column;
-  }
-
-  .section {
-    width: 100%;
-  }
-
   .section--left {
     background-position: center;
   }
 
-  .credit {
-    display: none;
-  }
-
-  .section--right {
-    justify-content: flex-start;
-    width: 100%;
+  .logo-container {
+    top: 24%;
   }
 
   .logo-image {
-    height: 80%;
-    width: auto;
+    width: 10rem;
+    height: 10rem;
   }
 
   .logo-name {
-    font-size: 9rem;
-    height: 18rem;
-    position: static;
+    font-size: 8rem;
   }
 
   .section-header > p,
@@ -292,20 +275,33 @@ main {
   }
 }
 
-/* max-width: 584px */
-@media (max-width: 36.5em) {
+/* max-width: 880px */
+@media (max-width: 55em) {
+  main {
+    flex-direction: column;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+  }
+
   .inputs {
-    width: 80%;
+    width: 100%;
     gap: 1.4rem;
   }
 
-  .section--left {
-    background-position: center;
+  .logo-image {
+    width: 7rem;
+    height: 7rem;
   }
 
   .logo-name {
-    font-size: 4.8rem;
-    height: 10rem;
+    font-size: 6rem;
+    top: auto;
+  }
+
+  .credit {
+    display: none;
   }
 
   .section-header {
@@ -328,10 +324,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .form input {
-    width: 100%;
   }
 
   .error-message {
