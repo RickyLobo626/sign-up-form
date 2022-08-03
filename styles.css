@@ -1,3 +1,11 @@
+/*****************/
+/* GENERAL */
+/*****************/
+@font-face {
+  font-family: "Norse Bold";
+  src: url(Norse-Bold.otf);
+}
+
 html {
   font-family: "Titillium Web", sans-serif;
   font-size: 62.5%;
@@ -19,8 +27,6 @@ html {
 
 main {
   display: flex;
-  flex-flow: row wrap;
-
   height: 100vh;
   min-width: 24rem;
 }
@@ -42,24 +48,18 @@ main {
   flex-shrink: 0;
 }
 
-/*****************/
-/* LOGO */
-/*****************/
-@font-face {
-  font-family: "Norse Bold";
-  src: url(Norse-Bold.otf);
-}
+.inputs {
+  width: 100%;
 
-.logo-name {
-  font-family: "Norse Bold";
-  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
 }
 
 /*****************/
 /* SECTION LEFT */
 /*****************/
 .section--left {
-  height: 100%;
   background-color: var(--green1);
   background-image: url(imgs/background.jpg);
   background-size: cover;
@@ -70,11 +70,12 @@ main {
 }
 
 .logo-name {
-  height: 15%;
+  font-family: "Norse Bold";
+  height: 20rem;
   width: 100%;
   background-color: var(--green1-transp);
   color: white;
-  font-size: 8.4rem;
+  font-size: 12rem;
   padding: 1.2rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 
@@ -84,7 +85,7 @@ main {
   gap: 1rem;
 
   position: absolute;
-  top: 22%;
+  top: 17%;
 }
 
 .logo-image {
@@ -111,8 +112,8 @@ main {
 /* SECTION RIGHT */
 /*****************/
 .section--right {
-  height: 100%;
   background-color: var(--green2);
+  flex: 1;
 
   display: flex;
   flex-direction: column;
@@ -152,15 +153,6 @@ main {
   font-weight: 600;
   margin-bottom: 1rem;
   grid-column: 1/-1;
-}
-
-.inputs-left,
-.inputs-right {
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
 }
 
 .label {
@@ -258,10 +250,11 @@ main {
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
+
+/* max-width: 1200px */
 @media (max-width: 75em) {
   main {
     flex-direction: column;
-    flex-flow: column;
   }
 
   .section {
@@ -270,7 +263,6 @@ main {
 
   .section--left {
     background-position: center;
-    height: 15rem;
   }
 
   .credit {
@@ -278,8 +270,7 @@ main {
   }
 
   .section--right {
-    justify-content: stretch;
-
+    justify-content: flex-start;
     width: 100%;
   }
 
@@ -289,8 +280,8 @@ main {
   }
 
   .logo-name {
-    font-size: 7.2rem;
-    height: 100%;
+    font-size: 9rem;
+    height: 18rem;
     position: static;
   }
 
@@ -300,13 +291,15 @@ main {
   }
 }
 
+/* max-width: 584px */
 @media (max-width: 36.5em) {
   .section--left {
     background-position: center;
   }
 
-  .section--right {
-    justify-content: stretch;
+  .logo-name {
+    font-size: 4.8rem;
+    height: 10rem;
   }
 
   .section-header {
@@ -334,5 +327,9 @@ main {
 
   .form input {
     width: 100%;
+  }
+
+  .login {
+    font-size: 1.6rem;
   }
 }
