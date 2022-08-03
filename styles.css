@@ -17,14 +17,12 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  height: 100vh;
-}
-
 main {
   display: flex;
   justify-content: center;
-  height: 100%;
+  flex-flow: row wrap;
+  height: 100vh;
+  min-height: 100rem;
 }
 
 .link:link,
@@ -56,6 +54,7 @@ main {
 /* SECTION LEFT */
 /*****************/
 .left-section {
+  height: 100%;
   width: 50%;
   background-color: var(--green1);
   background-image: url(imgs/background.jpg);
@@ -68,11 +67,10 @@ main {
 
 .logo-name {
   width: 100%;
-  height: 100px;
   background-color: var(--green1-transp);
   color: white;
   font-size: 6.4rem;
-  padding: 1rem;
+  padding: 1.2rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 
   display: flex;
@@ -81,12 +79,11 @@ main {
   gap: 1rem;
 
   position: absolute;
-
   top: 25%;
 }
 
 .logo-image {
-  width: 60px;
+  width: 90px;
 }
 
 .credit {
@@ -113,11 +110,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
-}
-
-.container {
-  width: 100%;
 }
 
 .section-header {
@@ -125,6 +117,7 @@ main {
 }
 
 .section-header > p {
+  max-width: 50ch;
   color: var(--green1);
   font-size: 2.4rem;
   font-weight: 600;
@@ -147,6 +140,7 @@ main {
 }
 
 .form-heading {
+  color: var(--green1);
   font-size: 2.4rem;
   font-weight: 600;
   grid-column: 1/-1;
@@ -170,9 +164,11 @@ main {
 }
 
 .form input {
+  font-size: 1.6rem;
   border: 1px solid #ccc;
+  border-radius: 5px;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   min-width: 25rem;
   position: relative;
 }
@@ -197,7 +193,7 @@ main {
   opacity: 0.7;
 }
 
-.form input:invalid:not(:placeholder-shown) + .error {
+.form input:invalid:not(:placeholder-shown) + .error-message {
   display: block;
 }
 
@@ -213,7 +209,7 @@ main {
   right: -1.2rem;
 }
 
-.error {
+.error-message {
   display: none;
   color: var(--valid-red);
   font-size: 1.2rem;
@@ -235,7 +231,7 @@ main {
   border: none;
   cursor: pointer;
 
-  padding: 1rem 3.5rem;
+  padding: 1.4rem 5rem;
   border-radius: 8px;
   margin-bottom: 2.5rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
@@ -248,4 +244,28 @@ main {
 
 .login-link {
   font-weight: 600;
+}
+
+/*****************/
+/* MEDIA QUERY */
+/*****************/
+@media (max-width: 1200px) {
+  main {
+    flex-direction: column;
+    flex-flow: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+  }
+
+  .left-section {
+    background-position: center;
+  }
+
+  .logo-name {
+    top: 0;
+    bottom: 0;
+  }
 }
