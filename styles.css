@@ -19,10 +19,10 @@ html {
 
 main {
   display: flex;
-  justify-content: center;
   flex-flow: row wrap;
+
   height: 100vh;
-  min-height: 100rem;
+  min-width: 24rem;
 }
 
 .link:link,
@@ -35,6 +35,11 @@ main {
 .link:active {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.section {
+  width: 50%;
+  flex-shrink: 0;
 }
 
 /*****************/
@@ -53,9 +58,8 @@ main {
 /*****************/
 /* SECTION LEFT */
 /*****************/
-.left-section {
+.section--left {
   height: 100%;
-  width: 50%;
   background-color: var(--green1);
   background-image: url(imgs/background.jpg);
   background-size: cover;
@@ -66,10 +70,11 @@ main {
 }
 
 .logo-name {
+  height: 15%;
   width: 100%;
   background-color: var(--green1-transp);
   color: white;
-  font-size: 6.4rem;
+  font-size: 8.4rem;
   padding: 1.2rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 
@@ -79,11 +84,12 @@ main {
   gap: 1rem;
 
   position: absolute;
-  top: 25%;
+  top: 22%;
 }
 
 .logo-image {
-  width: 90px;
+  width: auto;
+  height: 100%;
 }
 
 .credit {
@@ -94,6 +100,7 @@ main {
 
   position: absolute;
   bottom: 5px;
+  z-index: 999;
 }
 
 .credit-link {
@@ -103,8 +110,8 @@ main {
 /*****************/
 /* SECTION RIGHT */
 /*****************/
-.right-section {
-  width: 50%;
+.section--right {
+  height: 100%;
   background-color: var(--green2);
 
   display: flex;
@@ -129,6 +136,7 @@ main {
 }
 
 .form {
+  color: #555;
   background-color: white;
   padding: 2rem 2.8rem 3rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
@@ -140,14 +148,16 @@ main {
 }
 
 .form-heading {
-  color: var(--green1);
   font-size: 2.4rem;
   font-weight: 600;
+  margin-bottom: 1rem;
   grid-column: 1/-1;
 }
 
 .inputs-left,
 .inputs-right {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   gap: 2.6rem;
@@ -168,8 +178,7 @@ main {
   border: 1px solid #ccc;
   border-radius: 5px;
   display: block;
-  padding: 0.8rem 1rem;
-  min-width: 25rem;
+  padding: 1rem 1.4rem 0.9rem;
   position: relative;
 }
 
@@ -181,12 +190,12 @@ main {
 
 .form input:invalid:not(:focus):not(:placeholder-shown) {
   border-color: var(--valid-red);
-  box-shadow: inset 0 0 10px rgba(230, 95, 95, 0.5);
+  box-shadow: inset 0 0 25px rgba(230, 95, 95, 0.5);
 }
 
 .form input:required:valid:not(:placeholder-shown) {
   border-color: var(--valid-green);
-  box-shadow: inset 0 0 10px rgba(52, 150, 7, 0.5);
+  box-shadow: inset 0 0 25px rgba(52, 150, 7, 0.5);
 }
 
 .form input::placeholder {
@@ -247,25 +256,83 @@ main {
 }
 
 /*****************/
-/* MEDIA QUERY */
+/* MEDIA QUERIES */
 /*****************/
-@media (max-width: 1200px) {
+@media (max-width: 75em) {
   main {
     flex-direction: column;
     flex-flow: column;
   }
 
-  .left-section,
-  .right-section {
+  .section {
     width: 100%;
   }
 
-  .left-section {
+  .section--left {
     background-position: center;
+    height: 15rem;
+  }
+
+  .credit {
+    display: none;
+  }
+
+  .section--right {
+    justify-content: stretch;
+
+    width: 100%;
+  }
+
+  .logo-image {
+    height: 80%;
+    width: auto;
   }
 
   .logo-name {
-    top: 0;
-    bottom: 0;
+    font-size: 7.2rem;
+    height: 100%;
+    position: static;
+  }
+
+  .section-header > p,
+  .form-heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 36.5em) {
+  .section--left {
+    background-position: center;
+  }
+
+  .section--right {
+    justify-content: stretch;
+  }
+
+  .section-header {
+    padding: 3rem 2.8rem;
+    text-align: center;
+    align-self: center;
+  }
+
+  .section-header > p,
+  .form-heading {
+    font-size: 2rem;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 2.6rem;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form input {
+    width: 100%;
   }
 }

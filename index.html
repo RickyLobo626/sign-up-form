@@ -15,7 +15,7 @@
   </head>
   <body>
     <main>
-      <section class="left-section">
+      <section class="section section--left">
         <h1 class="logo-name">
           <img
             class="logo-image"
@@ -28,58 +28,56 @@
           Photo by <a class="credit-link link" href="https://unsplash.com/@sebinthomas">Sebin Thomas</a> on Unsplash</a>
         </p>
       </section>
-      <section class="right-section">
-        <div class="container">
-          <header class="section-header">
-            <p>
-              This is not a real online service! You know you need something
-              like this in your life to help you realize your deepest dreams.
-            </p>
-            <p>Sign up now to get started.</p>
-            <p>You <em>know</em> you want to.</p>
-          </header>
-          <form id="signup-form" class="form" action="#">
-            <h1 class="form-heading">Let's do this!</h1>
-            <div class="inputs-left">
-              <div class="form-control">
-                <label for="first-name" class="label" >First name</label>
-                <input type="text" id="first-name" name="first-name" placeholder=" " pattern="^[a-zA-Z]+$" required/>
-                <p class="error-message">Please enter a valid first name</p>
-              </div>
-              <div class="form-control">
-                <label for="email" class="label" >Email</label>
-                <input type="email" id="email" name="email" placeholder=" " required/>
-                <p class="error-message">Please enter a valid email</p>
-              </div>
-              <div class="form-control">
-                <label for="password-1" class="label" >Password</label>
-                <input type="password" id="password-1" name="password-1" placeholder=" " minlength="8" required/>
-                <p class="error-message">Please enter a password with at least 8 characters</p>
-              </div>
+      <section class="section section--right">
+        <header class="section-header">
+          <p>
+            This is not a real online service! You know you need something
+            like this in your life to help you realize your deepest dreams.
+          </p>
+          <p>Sign up now to get started.</p>
+          <p>You <em>know</em> you want to.</p>
+        </header>
+        <form id="signup-form" class="form" action="#">
+          <h1 class="form-heading">Let's do this!</h1>
+          <div class="inputs-left">
+            <div class="form-control">
+              <label for="first-name" class="label" >First name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Ricardo" pattern="^[a-zA-Z]+$" required/>
+              <p class="error-message">Please enter a valid first name</p>
             </div>
-            <div class="inputs-right">
-              <div class="form-control">
-                <label for="last-name" class="label" >Last name</label>
-                <input type="text" id="last-name" name="last-name" placeholder=" " pattern="^[a-zA-Z]+$" required/>
-                <p class="error-message">Please enter a valid last name</p>
-              </div>
-              <div class="form-control">
-                <label for="telephone" class="label" >Phone number</label>
-                <input type="tel" id="telephone" name="telephone" placeholder=" " pattern="[0-9]+"/>
-                <p class="error-message">Please enter a valid phone number</p>
-              </div>
-              <div class="form-control">
-                <label for="password-2" class="label" >Confirm password</label>
-                <input type="password" id="password-2" name="password-1" placeholder=" " minlength="8" required/>
-              </div>
+            <div class="form-control">
+              <label for="email" class="label" >Email</label>
+              <input type="email" id="email" name="email" placeholder=" " required/>
+              <p class="error-message">Please enter a valid email</p>
             </div>
-          </form>
-          <div class="bottom">
-            <button class="btn" type="submit" form="signup-form">Create Account</button>
-            <p class="login">
-              Already have an account? <a href="#" class="login-link link">Log in</a>
-            </p>
+            <div class="form-control">
+              <label for="password-1" class="label" >Password</label>
+              <input type="password" id="password-1" name="password-1" placeholder=" " minlength="8" required/>
+              <p class="error-message">Please enter a password with at least 8 characters</p>
+            </div>
           </div>
+          <div class="inputs-right">
+            <div class="form-control">
+              <label for="last-name" class="label" >Last name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Lobo" pattern="^[a-zA-Z]+$" required/>
+              <p class="error-message">Please enter a valid last name</p>
+            </div>
+            <div class="form-control">
+              <label for="telephone" class="label" >Phone number</label>
+              <input type="tel" id="telephone" name="telephone" placeholder=" " pattern="[0-9]+"/>
+              <p class="error-message">Please enter a valid phone number</p>
+            </div>
+            <div class="form-control">
+              <label for="password-2" class="label" >Confirm password</label>
+              <input type="password" id="password-2" name="password-1" placeholder=" " minlength="8" required/>
+            </div>
+          </div>
+        </form>
+        <div class="bottom">
+          <button class="btn" type="submit" form="signup-form">Create Account</button>
+          <p class="login">
+            Already have an account? <a href="#" class="login-link link">Log in</a>
+          </p>
         </div>
       </section>
     </main>
