@@ -168,7 +168,7 @@ main {
 .form input {
   min-width: 20rem;
   font-size: 1.6rem;
-  border: 2px solid #aaa;
+  border: 2px solid #ddd;
   border-radius: 5px;
   display: block;
   padding: 1rem 1.4rem 0.9rem;
