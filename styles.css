@@ -43,15 +43,6 @@ main {
   text-underline-offset: 2px;
 }
 
-.inputs {
-  min-width: 20rem;
-  max-width: 35rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
-}
-
 /*****************/
 /* SECTION LEFT */
 /*****************/
@@ -61,8 +52,7 @@ main {
   background-size: cover;
   background-position: bottom;
   overflow: hidden;
-
-  flex-basis: 40%;
+  flex-grow: 1;
 
   position: relative;
 }
@@ -76,7 +66,7 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 19%;
+  top: 18%;
 }
 
 .logo-name {
@@ -88,6 +78,7 @@ main {
 .logo-image {
   width: 15rem;
   height: 15rem;
+  flex-shrink: 0;
 }
 
 .credit {
@@ -133,24 +124,32 @@ main {
   margin-bottom: 1.8rem;
 }
 
-.form {
+.wrapper {
   color: #555;
   background-color: white;
-  padding: 2rem 2.8rem 3rem;
+  padding: 2rem 2.8rem 3.4rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-
-  display: grid;
-  grid-template-columns: 26rem 26rem;
-
-  column-gap: 4rem;
-  row-gap: 1.4rem;
 }
 
-.form-heading {
+.section--right .heading {
   font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  grid-column: 1/-1;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  gap: 8rem;
+}
+
+.inputs {
+  min-width: 20rem;
+  max-width: 35rem;
+  flex-basis: 32rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
 }
 
 .label {
@@ -163,7 +162,7 @@ main {
   position: relative;
 }
 
-.form input {
+.form-control > input {
   width: 100%;
   font-size: 1.6rem;
   border: 2px solid #ddd;
@@ -173,27 +172,27 @@ main {
   position: relative;
 }
 
-.form input:focus {
+.form-control > input:focus {
   outline: none;
   border-color: black;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form input:invalid:not(:focus):not(:placeholder-shown) {
+.form-control > input:invalid:not(:focus):not(:placeholder-shown) {
   border-color: var(--valid-red);
   box-shadow: inset 0 0 25px rgba(230, 95, 95, 0.5);
 }
 
-.form input:required:valid:not(:placeholder-shown) {
+.form-control > input:required:valid:not(:placeholder-shown) {
   border-color: var(--valid-green);
   box-shadow: inset 0 0 25px rgba(52, 150, 7, 0.5);
 }
 
-.form input::placeholder {
+.form-control > input::placeholder {
   opacity: 0.7;
 }
 
-.form input:invalid:not(:placeholder-shown) + .error-message {
+.form-control > input:invalid:not(:placeholder-shown) + .error-message {
   display: block;
 }
 
@@ -257,21 +256,25 @@ main {
   }
 
   .logo-container {
-    top: 24%;
+    top: 19%;
   }
 
   .logo-image {
-    width: 10rem;
-    height: 10rem;
+    height: 13rem;
+    width: 13rem;
   }
 
   .logo-name {
-    font-size: 8rem;
+    font-size: 11rem;
   }
 
   .section-header > p,
-  .form-heading {
+  .section--right .heading {
     font-size: 2.2rem;
+  }
+
+  .form {
+    gap: 6rem;
   }
 }
 
@@ -286,6 +289,7 @@ main {
   }
 
   .inputs {
+    flex-basis: auto;
     width: 100%;
     gap: 1.4rem;
   }
@@ -306,18 +310,22 @@ main {
 
   .section-header {
     padding: 3rem 2.8rem;
-    text-align: center;
     align-self: center;
   }
 
-  .section-header > p,
-  .form-heading {
+  .section-header > p {
     font-size: 2rem;
+    text-align: center;
+  }
+
+  .section--right .heading {
+    text-align: center;
   }
 
   .form {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
   }
 
   .bottom {
