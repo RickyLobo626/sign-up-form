@@ -15,6 +15,7 @@ html {
   --green1-transp: rgb(86, 121, 1, 0.7);
   --valid-red: #a00000;
   --valid-green: #349607;
+  --focus-blue: #5fa8e4;
 }
 
 *,
@@ -138,18 +139,16 @@ main {
 }
 
 .form {
+  max-width: 80rem;
+
   display: flex;
-  gap: 8rem;
+  flex-flow: row wrap;
+  column-gap: 10%;
+  row-gap: 2.8rem;
 }
 
-.inputs {
-  min-width: 20rem;
-  max-width: 35rem;
-  flex-basis: 32rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
+.form-control {
+  flex-basis: 45%;
 }
 
 .label {
@@ -174,7 +173,7 @@ main {
 
 .form-control > input:focus {
   outline: none;
-  border-color: black;
+  border-color: var(--focus-blue);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -196,10 +195,7 @@ main {
   display: block;
 }
 
-.label[for*="name"]::after,
-.label[for*="name"]::after,
-.label[for="email"]::after,
-.label[for|="password"]::after {
+.label:not([for="telephone"])::after {
   content: "*";
   font-size: 1.8rem;
   color: var(--valid-red);
@@ -272,10 +268,6 @@ main {
   .section--right .heading {
     font-size: 2.2rem;
   }
-
-  .form {
-    gap: 6rem;
-  }
 }
 
 /* max-width: 880px */
@@ -287,12 +279,6 @@ main {
   .btn {
     font-size: 1.6rem;
     padding: 1.4rem 3.4rem;
-  }
-
-  .inputs {
-    flex-basis: auto;
-    width: 100%;
-    gap: 1.4rem;
   }
 
   .logo-image {
@@ -324,9 +310,15 @@ main {
   }
 
   .form {
-    flex-direction: column;
+    flex-flow: column nowrap;
     align-items: center;
-    gap: 1.4rem;
+    margin: 0 auto;
+    max-width: 40rem;
+  }
+
+  .form-control {
+    flex-basis: auto;
+    width: 100%;
   }
 
   .bottom {
